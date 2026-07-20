@@ -1,0 +1,6 @@
+# Telegram-бот сбора данных. Лёгкий: без фреймворков, прямой Telegram Bot API.
+requests
+pillow
+# Для модели-ассиста (подсказка класса) переиспользуется backend/model.py:
+# нужны также зависимости backend/requirements.txt (numpy, scikit-image, scikit-learn, opencv, joblib).
+# Без них бот работает, но без подсказки класса (предскажет None).

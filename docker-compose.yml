@@ -1,0 +1,28 @@
+# Деплой на сервере: бот (постоянно) + опционально API /predict.
+# Токен НЕ в этом файле и НЕ в git — он в .env (см. .env.example).
+#
+# Запуск:  docker compose up -d --build       (поднять в фоне)
+#          docker compose logs -f bot          (смотреть логи)
+#          docker compose down                 (остановить)
+
+services:
+  bot:
+    build: .
+    image: verinbirds:latest
+    env_file: .env                 # VERINBIRDS_BOT_TOKEN=...  (ты создаёшь .env сам)
+    volumes:
+      - ./data:/app/data           # персист: фото + labels.csv + bot_state.json
+    restart: unless-stopped
+    command: ["python", "bot/telegram_bot.py"]
+
+  # Необязательно: HTTP API /predict на фиксированном порту 8000.
+  # Раскомментируй, если нужен веб-эндпоинт помимо бота.
+  # api:
+  #   build: .
+  #   image: verinbirds:latest
+  #   ports:
+  #     - "8000:8000"
+  #   volumes:
+  #     - ./data:/app/data
+  #   restart: unless-stopped
+  #   command: ["uvicorn", "main:app", "--app-dir", "backend", "--host", "0.0.0.0", "--port", "8000"]

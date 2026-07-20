@@ -1,0 +1,13 @@
+# Не тащим в build-контекст тяжёлое и лишнее
+.git
+.venv
+data/chicken
+data/quail_real
+ml/reports
+ml/notebooks
+docs
+*.md
+.env
+__pycache__
+**/__pycache__
+*.pyc

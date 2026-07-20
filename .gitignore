@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.ipynb_checkpoints/
+
+# Data — не храним сырые датасеты и веса в git
+data/chicken/
+data/**/*.jpg
+data/**/*.jpeg
+data/**/*.png
+!data/**/sample_*.jpg
+*.pt
+*.pth
+*.onnx
+*.h5
+
+# EDA артефакты
+ml/reports/*.png
+ml/reports/*.csv
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+
+# Runtime-состояние — не коммитим
+bot/state.json
+data/bot_state.json
+
+# Локальные заметки в markdown
+*.md
+
+# Secrets
+.env
+kaggle.json

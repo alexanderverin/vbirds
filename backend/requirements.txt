@@ -1,0 +1,11 @@
+# Backend API — ЛЁГКИЙ образ, БЕЗ torch/ultralytics.
+# Инференс baseline-модели: только классические признаки + sklearn.
+fastapi
+uvicorn[standard]
+python-multipart
+pillow
+numpy
+scikit-image>=0.24
+scikit-learn
+opencv-python-headless
+joblib

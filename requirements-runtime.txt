@@ -1,0 +1,12 @@
+# Runtime-зависимости для Docker-образа (бот + API инференс). ЛЁГКИЕ: без torch, без opencv
+# (инференс baseline их не использует). Только классические признаки + sklearn.
+numpy
+pillow
+scikit-image>=0.24
+scikit-learn
+joblib
+requests
+# API (если поднимать сервис /predict в том же образе):
+fastapi
+uvicorn[standard]
+python-multipart

@@ -1,0 +1,11 @@
+# Локальные зависимости для EDA / препроцессинга / baseline (CPU-only).
+# Тяжёлые ML-либы (torch, ultralytics) сюда НЕ ставим — обучение только в Colab.
+# Пины ослаблены под Python 3.13 (готовые wheels). Точные версии — в requirements-dev.lock.txt.
+numpy
+pandas
+matplotlib
+pillow
+scikit-image>=0.24
+scikit-learn
+opencv-python-headless
+kaggle

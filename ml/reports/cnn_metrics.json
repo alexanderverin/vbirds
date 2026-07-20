@@ -1,0 +1,22 @@
+{
+  "model": "resnet18_linear_probe",
+  "test_accuracy": 0.993,
+  "per_class_recall": {
+    "fertile": 1.0,
+    "infertile": 0.9895,
+    "dead": 0.9895
+  },
+  "confusion_matrix": [
+    [285, 0, 0],
+    [0, 282, 3],
+    [0, 3, 282]
+  ],
+  "classes": ["fertile", "infertile", "dead"],
+  "img_size": 224,
+  "seed": 42,
+  "train_per_class": 400,
+  "n_test": 855,
+  "note": "Linear probe (замороженный ResNet18 + логрегрессия). Обучено/оценено на КУРИНОМ датасете, готовый train/test сплит. Точность высокая ожидаемо (артефакты источника). Реальная проверка — перепела, Этап 6.",
+  "source": "Colab CPU, train_cnn_colab_cpu.ipynb",
+  "date": "2026-07-14"
+}
